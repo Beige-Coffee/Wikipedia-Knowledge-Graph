@@ -1,4 +1,2 @@
 .ipynb_checkpoints/
-data/glove.6B.50d.txt
-data/glove.6B/
-Feature_Engineering/glove.6B.50d.txt.word2vec
+enwiki.observations.text_wp10.30k.tsv
