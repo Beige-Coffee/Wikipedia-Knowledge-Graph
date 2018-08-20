@@ -3,12 +3,13 @@ import numpy as np
 from ast import literal_eval
 from textstat.textstat import textstat
 from gensim.corpora import wikicorpus
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestRegressor
 import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import Feature_Engineering.feature_engineering as feature
+from Feature_Engineering import feature_engineering as feature
+from sklearn.metrics import mean_squared_error
 
 
 def import_data_from_tsv(tsv_file):
@@ -48,6 +49,7 @@ def transform_data(dataframe):
     dataframe['syllable_count'] = dataframe['cleaned_text'].apply(feature_engineering.find_syllable_count)
     dataframe['lexicon_count'] = dataframe['cleaned_text'].apply(feature_engineering.find_lexicon_count)
     dataframe['sentence_count'] = dataframe['cleaned_text'].apply(feature_engineering.find_sentence_count)
+    dataframe['num_footnotes'] = dataframe['text'].apply(feature_engineering.find_num_footnotes)
     dataframe.dropna(inplace=True)
     dataframe = dataframe.loc[:, ['has_infobox','num_categories','num_images','num_ISBN','num_references','article_length',
                  'num_difficult_words','dale_chall_readability_score','readability_index','linsear_write_formula',
@@ -56,10 +58,11 @@ def transform_data(dataframe):
                 'lexicon_count', 'sentence_count']]
     return dataframe
 
+
 class WikiArticleClassifier():
 
     def __init__(self):
-        self.rf = RandomForestClassifier(n_estimators = 1000)
+        self.rf = RandomForestRegressor(n_estimators=10)
 
     def fit(self, X, y):
         transformed_data = transform_data(X).values
@@ -73,29 +76,4 @@ class WikiArticleClassifier():
     def predict_proba(self, X):
         transformed_data = transform_data(X).values
         return self.rf.predict_proba(transformed_data)
-
-
-
-
-
-
-vectorizer = TfidfVectorizer()
-vectorizer.fit(data['cleaned_text'])
-X_transformed = vectorizer.transform(data['cleaned_text'])
-tfidf_df = pd.DataFrame(X_transformed.todense())
-df1 = data.loc[:, ['has_infobox','num_categories','num_images','num_ISBN','num_references','article_length',
-                 'num_difficult_words','dale_chall_readability_score','readability_index','linsear_write_formula',
-                 'gunning_fog_index', 'smog_index']]
-X = pd.concat([df1, tfidf_df], axis=1)
-y = data.label.values
-
-X_train, X_test, y_train, y_test = train_test_split(X.values, y, test_size=0.20, random_state=910)
-
-clf = RandomForestClassifier(n_estimators=1000, random_state=910)
-clf.fit(X_train, y_train)
-
-predictions = clf.predict(X_test)
-score = accuracy_score(y_test, predictions)
-
-print(score)
 

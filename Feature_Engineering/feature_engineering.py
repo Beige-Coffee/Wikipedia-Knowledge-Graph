@@ -21,7 +21,7 @@ def clean_wiki_markup(raw_article):
 
 
 def find_num_categories(raw_article):
-    """ Finds the number of categories listed at the bottom of a Wikipedia article.
+    """ Finds the estimated number of categories listed at the bottom of a Wikipedia article.
 
         Parameters
         ----------
@@ -35,11 +35,21 @@ def find_num_categories(raw_article):
 
 
 def find_num_images(raw_article):
+    """ Finds the estimated number of images in a Wikipedia article.
+
+        Parameters
+        ----------
+        raw_article (str): Wikipedia markup text
+
+        Returns
+        -------
+        (int): Number of images present in text
+    """
     return raw_article.count("[[Image:")
 
 
 def find_num_ISBN(raw_article):
-    """ Finds the number of ISBN's listed in a Wikipedia article.
+    """ Finds the estimated number of ISBN's listed in a Wikipedia article.
 
         Parameters
         ----------
@@ -53,7 +63,7 @@ def find_num_ISBN(raw_article):
 
 
 def find_num_references(raw_article):
-    """ Finds the number of references listed in a Wikipedia article.
+    """ Finds the estimated number of references listed in a Wikipedia article.
 
         Parameters
         ----------
@@ -190,7 +200,7 @@ def find_smog_index(cleaned_article):
     return textstat.smog_index(cleaned_article)
 
 def find_num_web_citations(raw_article):
-    """ Finds the number of web citations within a Wikipedia article.
+    """ Finds the estimated number of web citations within a Wikipedia article.
 
         Parameters
         ----------
@@ -204,7 +214,7 @@ def find_num_web_citations(raw_article):
 
 
 def find_num_book_citations(raw_article):
-    """ Finds the number of book citations within a Wikipedia article.
+    """ Finds the estimated number of book citations within a Wikipedia article.
 
         Parameters
         ----------
@@ -218,7 +228,7 @@ def find_num_book_citations(raw_article):
 
 
 def find_num_news_citations(raw_article):
-    """ Finds the number of news citations within a Wikipedia article.
+    """ Finds the estimated number of news citations within a Wikipedia article.
 
         Parameters
         ----------
@@ -232,7 +242,7 @@ def find_num_news_citations(raw_article):
 
 
 def find_num_quotes(raw_article):
-    """ Finds the number of quotes mentioned in a Wikipedia article.
+    """ Finds the estimated number of quotes mentioned in a Wikipedia article.
 
         Parameters
         ----------
@@ -246,7 +256,7 @@ def find_num_quotes(raw_article):
 
 
 def find_num_h3_headers(raw_article):
-    """ Finds the number of h3 headers in a Wikipedia article.
+    """ Finds the estimated number of h3 headers in a Wikipedia article.
 
         Parameters
         ----------
@@ -260,7 +270,7 @@ def find_num_h3_headers(raw_article):
 
 
 def find_num_internal_links(raw_article):
-    """ Finds the number of internal links in a Wikipedia article.
+    """ Finds the estimated number of internal links in a Wikipedia article.
 
         Parameters
         ----------
@@ -270,11 +280,11 @@ def find_num_internal_links(raw_article):
         -------
         (int): Number of internal links in Wikipedia article
     """
-    return (raw_article.count("[[") // 2)
+    return raw_article.count("[[")
 
 
 def find_num_h2_headers(raw_article):
-    """ Finds the number of h2 headers in a Wikipedia article.
+    """ Finds the estimated number of h2 headers in a Wikipedia article.
 
         Parameters
         ----------
@@ -328,3 +338,16 @@ def find_sentence_count(cleaned_article):
         (int): Number sentences in text
     """ 
     return textstat.sentence_count(cleaned_article)
+
+def find_num_footnotes(raw_article):
+    """ Finds the estimated number of footnotes a Wikipedia article.
+
+    Parameters
+    ----------
+    raw_article (str): Wikipedia markup text
+
+    Returns
+    -------
+    (int): Number of estimated footnotes in Wikipedia article
+    """
+    return raw_article.count("{{")
