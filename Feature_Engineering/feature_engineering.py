@@ -252,7 +252,7 @@ def find_num_quotes(raw_article):
         -------
         (int): Number of quotes in Wikipedia article
     """
-    return raw_article.count("quote=")
+    return raw_article.count("{{quote")
 
 
 def find_num_h3_headers(raw_article):
@@ -340,7 +340,7 @@ def find_sentence_count(cleaned_article):
     return textstat.sentence_count(cleaned_article)
 
 def find_num_footnotes(raw_article):
-    """ Finds the estimated number of footnotes a Wikipedia article.
+    """ Finds the estimated number of footnotes in a Wikipedia article.
 
     Parameters
     ----------
@@ -348,6 +348,90 @@ def find_num_footnotes(raw_article):
 
     Returns
     -------
-    (int): Number of estimated footnotes in Wikipedia article
+    (int): Number of footnotes in Wikipedia article
     """
     return raw_article.count("{{")
+
+
+def find_num_note_tags(raw_article):
+    """ Finds the estimated number of note tags in a Wikipedia article.
+
+    Parameters
+    ----------
+    raw_article (str): Wikipedia markup text
+
+    Returns
+    -------
+    (int): Number of note tags in Wikipedia article
+    """
+    return raw_article.count("{{note")
+
+
+def find_num_bullet_points(raw_article):
+    """ Finds the estimated number of bullet points in a Wikipedia article.
+
+    Parameters
+    ----------
+    raw_article (str): Wikipedia markup text
+
+    Returns
+    -------
+    (int): Number of bullet points in Wikipedia article
+    """
+    return (raw_article.count("*"))
+
+
+def find_num_underlines(raw_article):
+    """ Finds the estimated number of underlines in a Wikipedia article.
+
+    Parameters
+    ----------
+    raw_article (str): Wikipedia markup text
+
+    Returns
+    -------
+    (int): Number of underlines in Wikipedia article
+    """
+    return (raw_article.count("<u>"))
+
+
+def find_num_journal_citations(raw_article):
+    """ Finds the estimated number of journal citations in a Wikipedia article.
+
+    Parameters
+    ----------
+    raw_article (str): Wikipedia markup text
+
+    Returns
+    -------
+    (int): Number of journal citations in Wikipedia article
+    """
+    return (raw_article.count("{{cite journal"))
+
+
+def find_num_about_links(raw_article):
+    """ Finds the estimated number of 'About' links in a Wikipedia article.
+
+    Parameters
+    ----------
+    raw_article (str): Wikipedia markup text
+
+    Returns
+    -------
+    (int): Number of 'About' links in Wikipedia article
+    """
+    return (raw_article.count("{{About"))
+
+
+def find_num_wikitables(raw_article):
+    """ Finds the estimated number of Wiki Tables in a Wikipedia article.
+
+    Parameters
+    ----------
+    raw_article (str): Wikipedia markup text
+
+    Returns
+    -------
+    (int): Number of Wiki Tables in Wikipedia article
+    """
+    return (raw_article.count('class="wikitable'))

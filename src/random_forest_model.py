@@ -8,13 +8,13 @@ import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-from Feature_Engineering import feature_engineering as feature
+import feature_engineering as feature
 from sklearn.metrics import mean_squared_error
 
 
 def import_data_from_tsv(tsv_file):
     """ tsv because Wikipedia data comes in this format"""
-    data = pd.read_csv(csv_file, sep='\t', header=None)
+    data = pd.read_csv(tsv_file, sep='\t', header=None)
     return pd.DataFrame(data=list(data[0].apply(literal_eval)))
 
 
@@ -50,12 +50,16 @@ def transform_data(dataframe):
     dataframe['lexicon_count'] = dataframe['cleaned_text'].apply(feature_engineering.find_lexicon_count)
     dataframe['sentence_count'] = dataframe['cleaned_text'].apply(feature_engineering.find_sentence_count)
     dataframe['num_footnotes'] = dataframe['text'].apply(feature_engineering.find_num_footnotes)
+    dataframe['num_note_tags'] = dataframe['text'].apply(feature_engineering.find_num_note_tags)
+    dataframe['num_bullet_points'] = dataframe['text'].apply(feature_engineering.num_bullet_points)
+    
+
     dataframe.dropna(inplace=True)
     dataframe = dataframe.loc[:, ['has_infobox','num_categories','num_images','num_ISBN','num_references','article_length',
                  'num_difficult_words','dale_chall_readability_score','readability_index','linsear_write_formula',
                  'gunning_fog_index', 'num_web_citations','num_book_citations','num_news_citations',
                 'num_quotes','num_h3_headers','num_internal_links', 'num_h2_headers', 'syllable_count',
-                'lexicon_count', 'sentence_count']]
+                'lexicon_count', 'sentence_count','num_footnotes', 'num_note_tags']]
     return dataframe
 
 
@@ -71,9 +75,4 @@ class WikiArticleClassifier():
     def predict(self, X):
         transformed_data = transform_data(X).values
         return self.rf.predict(transformed_data)
-    
-    
-    def predict_proba(self, X):
-        transformed_data = transform_data(X).values
-        return self.rf.predict_proba(transformed_data)
 

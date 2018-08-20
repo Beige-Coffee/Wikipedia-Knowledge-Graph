@@ -5,16 +5,16 @@ from textstat.textstat import textstat
 from gensim.corpora import wikicorpus
 from sklearn.ensemble import RandomForestRegressor
 import nltk
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-from Feature_Engineering import feature_engineering as feature
+import feature_engineering as feature
 from sklearn.metrics import mean_squared_error
 
 
 def import_data_from_tsv(tsv_file):
     """ tsv because Wikipedia data comes in this format"""
-    data = pd.read_csv(csv_file, sep='\t', header=None)
+    data = pd.read_csv(tsv_file, sep='\t', header=None)
     return pd.DataFrame(data=list(data[0].apply(literal_eval)))
 
 
