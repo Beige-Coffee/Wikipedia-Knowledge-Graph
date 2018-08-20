@@ -51,15 +51,17 @@ def transform_data(dataframe):
     dataframe['sentence_count'] = dataframe['cleaned_text'].apply(feature_engineering.find_sentence_count)
     dataframe['num_footnotes'] = dataframe['text'].apply(feature_engineering.find_num_footnotes)
     dataframe['num_note_tags'] = dataframe['text'].apply(feature_engineering.find_num_note_tags)
-    dataframe['num_bullet_points'] = dataframe['text'].apply(feature_engineering.num_bullet_points)
-    
-
+    dataframe['num_underlines'] = dataframe['text'].apply(feature_engineering.find_num_underlines)
+    dataframe['num_journal_citations'] = dataframe['text'].apply(feature_engineering.find_num_journal_citations)
+    dataframe['num_about_links'] = dataframe['text'].apply(feature_engineering.find_num_about_links)
+    dataframe['num_wikitables'] = dataframe['text'].apply(feature_engineering.find_num_wikitables)
     dataframe.dropna(inplace=True)
     dataframe = dataframe.loc[:, ['has_infobox','num_categories','num_images','num_ISBN','num_references','article_length',
                  'num_difficult_words','dale_chall_readability_score','readability_index','linsear_write_formula',
                  'gunning_fog_index', 'num_web_citations','num_book_citations','num_news_citations',
                 'num_quotes','num_h3_headers','num_internal_links', 'num_h2_headers', 'syllable_count',
-                'lexicon_count', 'sentence_count','num_footnotes', 'num_note_tags']]
+                'lexicon_count', 'sentence_count','num_footnotes', 'num_note_tags', 'num_underlines', 'num_journal_citations',
+                'num_about_links', 'num_wikitables']]
     return dataframe
 
 
