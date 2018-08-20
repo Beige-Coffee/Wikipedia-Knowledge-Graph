@@ -125,7 +125,7 @@ data = data.loc[:, ['has_infobox','num_categories','num_images','num_ISBN','num_
                 'num_about_links', 'num_wikitables']]
 y = data.label.values
 
-X_train, X_test, y_train, y_test = train_test_split(df1.values, y, test_size=0.20, random_state=910)
+X_train, X_test, y_train, y_test = train_test_split(data.values, y, test_size=0.20, random_state=910)
 
 RF = RandomForestRegressor(n_estimators=500, random_state=910, )
 
