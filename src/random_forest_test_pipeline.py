@@ -83,6 +83,8 @@ def find_num_about_links(raw_article):
     return (raw_article.count("{{About"))
 def find_num_wikitables(raw_article):
     return (raw_article.count('class="wikitable'))
+def find_num_footnotes(raw_article):
+    return raw_article.count("{{")
 
 data['cleaned_text'] = data['text'].apply(clean_wiki_markup)
 data['num_web_citations'] = data['text'].apply(find_num_web_citations)
