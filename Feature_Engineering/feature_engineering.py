@@ -435,3 +435,17 @@ def find_num_wikitables(raw_article):
     (int): Number of Wiki Tables in Wikipedia article
     """
     return (raw_article.count('class="wikitable'))
+
+
+def find_infobox(raw_article):
+    """ Determines if the Wikipedia article has an infobox or not.
+
+    Parameters
+    ----------
+    raw_article (str): Wikipedia markup text
+
+    Returns
+    -------
+    (int): 0 if no infobox. 1 if yes infobox
+    """
+    return int('{{Infobox' in raw_article)
