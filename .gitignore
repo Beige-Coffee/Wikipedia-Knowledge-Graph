@@ -1,2 +1,12 @@
 .ipynb_checkpoints/
 data/
+src/backup_data.parq
+src/backup_data.pkl
+src/hash_vec2_aug23.pkl
+src/hash_vec_aug23.pkl
+src/hash_vec_fitter.pkl
+src/hash_vectorizer.ipynb
+src/random_forest_aug22.pkl
+src/random_forest_data.csv
+src/wiki_train.csv
+src/wiki_train.tsv
