@@ -56,12 +56,12 @@ def transform_data(dataframe):
     dataframe['num_about_links'] = dataframe['text'].apply(feature_engineering.find_num_about_links)
     dataframe['num_wikitables'] = dataframe['text'].apply(feature_engineering.find_num_wikitables)
     dataframe.dropna(inplace=True)
-    dataframe = dataframe.loc[:, ['has_infobox','num_categories','num_images','num_ISBN','num_references','article_length',
-                 'num_difficult_words','dale_chall_readability_score','readability_index','linsear_write_formula',
-                 'gunning_fog_index', 'num_web_citations','num_book_citations','num_news_citations',
+    dataframe = dataframe.loc[:, ['label', 'has_infobox','num_categories','num_images','num_ISBN','num_references','article_length',
+                'num_difficult_words','dale_chall_readability_score','readability_index','linsear_write_formula',
+                'gunning_fog_index', 'num_web_citations','num_book_citations','num_news_citations',
                 'num_quotes','num_h3_headers','num_internal_links', 'num_h2_headers', 'syllable_count',
                 'lexicon_count', 'sentence_count','num_footnotes', 'num_note_tags', 'num_underlines', 'num_journal_citations',
-                'num_about_links', 'num_wikitables']]
+                'num_about_links', 'num_wikitables', 'smog_index']]
     return dataframe
 
 
