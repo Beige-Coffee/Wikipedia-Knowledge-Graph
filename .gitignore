@@ -12,3 +12,5 @@ src/wiki_train.csv
 src/wiki_train.tsv
 EDA/Machine_Learning_Category_Wikipedia.pkl
 src/random_forest_model.sav
+RIP/
+EDA/ML_page_predictions.pkl
