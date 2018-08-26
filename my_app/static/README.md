@@ -1,28 +1,28 @@
-# [Start Bootstrap - Small Business](https://startbootstrap.com/template-overviews/small-business/)
+# [Start Bootstrap - Business Frontpage](https://startbootstrap.com/template-overviews/business-frontpage/)
 
-[Small Business](http://startbootstrap.com/template-overviews/small-business/) is a responsive marketing landing page template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+[Business Frontpage](http://startbootstrap.com/template-overviews/business-frontpage/) is a basic business website template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
 
 ## Preview
 
-[![Small Business Preview](https://startbootstrap.com/assets/img/templates/small-business.jpg)](https://blackrockdigital.github.io/startbootstrap-small-business/)
+[![Business Frontpage Preview](https://startbootstrap.com/assets/img/templates/business-frontpage.jpg)](https://blackrockdigital.github.io/startbootstrap-business-frontpage/)
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-small-business/)**
+**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-business-frontpage/)**
 
 ## Status
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-small-business/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-small-business.svg)](https://www.npmjs.com/package/startbootstrap-small-business)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-small-business.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-small-business)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-small-business/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-small-business)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-small-business/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-small-business?type=dev)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-business-frontpage/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/startbootstrap-business-frontpage.svg)](https://www.npmjs.com/package/startbootstrap-business-frontpage)
+[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-business-frontpage.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-business-frontpage)
+[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-business-frontpage/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-business-frontpage)
+[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-business-frontpage/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-business-frontpage?type=dev)
 
 ## Download and Installation
 
 To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/small-business/)
-* Install via npm: `npm i startbootstrap-small-business`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-small-business.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-small-business)
+* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/business-frontpage/)
+* Install via npm: `npm i startbootstrap-business-frontpage`
+* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-business-frontpage.git`
+* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-business-frontpage)
 
 ## Usage
 
@@ -44,7 +44,7 @@ Start Bootstrap has a public Slack channel which is a great place to ask questio
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-small-business/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/small-business/).
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-business-frontpage/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/business-frontpage/).
 
 ## About
 
@@ -63,4 +63,4 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 
 ## Copyright and License
 
-Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-small-business/blob/gh-pages/LICENSE) license.
+Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/gh-pages/LICENSE) license.

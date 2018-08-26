@@ -11,6 +11,11 @@ app = Flask(__name__,
 
 @app.route('/', methods=['GET'])
 def welcome_page():
+    return render_template('home.html')
+
+
+@app.route('/machine_learning', methods=['GET'])
+def machine_learning_page():
     return render_template('index.html')
 
 

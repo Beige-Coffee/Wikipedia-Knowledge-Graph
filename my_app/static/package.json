@@ -1,8 +1,8 @@
 {
-    "title": "Small Business",
-    "name": "startbootstrap-small-business",
+    "title": "Business Frontpage",
+    "name": "startbootstrap-business-frontpage",
     "version": "4.1.1",
-    "description": "A small business HTML template built with Bootstrap",
+    "description": "A simple business HTML landing page built with Bootstrap",
     "keywords": [
         "css",
         "sass",
@@ -11,9 +11,9 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/small-business",
+    "homepage": "https://startbootstrap.com/template-overviews/business-frontpage",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-small-business/issues",
+        "url": "https://github.com/BlackrockDigital/startbootstrap-business-frontpage/issues",
         "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
@@ -23,7 +23,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-small-business.git"
+        "url": "https://github.com/BlackrockDigital/startbootstrap-business-frontpage.git"
     },
     "dependencies": {
         "bootstrap": "4.1.1",
