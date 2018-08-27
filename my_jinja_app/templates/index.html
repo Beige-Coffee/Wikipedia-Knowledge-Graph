@@ -11,10 +11,10 @@
     <title>Rho</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/small-business.css" rel="stylesheet">
+    <link href="/css/small-business.css" rel="stylesheet">
 
   </head>
 
@@ -53,7 +53,7 @@
       <!-- Heading Row -->
       <div class="row my-4">
         <div class="col-lg-8">
-          <img class="img-fluid rounded" src="quality.png" alt="quality">
+          <img class="img-fluid rounded" src="/quality.png" alt="quality">
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-lg-4">
@@ -73,7 +73,7 @@
       <!-- Call to Action Well -->
       <div class="card text-white bg-secondary my-4 text-center">
         <div class="card-body">
-          <p class="text-white m-0" style="font-size:200%;">Wikipedia Category: Machine Learning</p>
+          <p class="text-white m-0" style="font-size:200%;">Wikipedia Category: {{category_name}}</p>
         </div>
       </div>
 
@@ -81,19 +81,19 @@
 
       <div class="row">
           {% block body %}
-          {% for cat in data.index %}
+          {% for index, row in data.iterrows() %}
           <div class="col-md-4 mb-4">
             <div class="card h-100">
               <div class="card-body">
-                <h4 class="card-title">{{cat}}</h4>
+                <h4 class="card-title">{{row['category']}}</h4>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">See Articles</a>
+                <a href="/sub_category/{{row['url_cat']}}" class="btn btn-primary">See Articles</a>
               </div>
             </div>
           </div>
           {% endfor %}
-      {% endblock %}
+          {% endblock %}
         </div>
         <!-- /.row -->
 
@@ -106,8 +106,8 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 
