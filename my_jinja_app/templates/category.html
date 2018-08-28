@@ -16,6 +16,26 @@
     <!-- Custom styles for this template -->
     <link href="/css/small-business.css" rel="stylesheet">
 
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/small-business.css" rel="stylesheet">
+
+
+    <!-- Bootstrap core CSS-->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -65,26 +85,44 @@
         </div>
       </div>
 
-      <!-- /.row -->
 
-      <div class="row">
-          {% block body %}
-          {% for index, row in data.iterrows() %}
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h4 class="card-title">{{row['category']}}</h4>
-              </div>
-              <div class="card-footer">
-                <a href="/sub_category/{{row['url_cat']}}" class="btn btn-primary">See Articles</a>
+        <!-- /.row -->
+        
+        <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Data Table Example</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                  <div class="row">
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                  <thead>
+                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 59px;">Page</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 65px;">Quality Score</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                    {% block body %}
+                    {% for i, row in data.iterrows() %}
+                  <tr role="row">
+                      <td class="sorting_1"><a href="/sub_category/{{row['url_cat']}}">{{row['category']}}</a></td>
+                      <td>{{row['Predicted_Quality']}}</td>
+                    {% endfor %}
+                    {% endblock %}
+                    </tr></tbody>
+                </table>
               </div>
             </div>
           </div>
-          {% endfor %}
-          {% endblock %}
-        </div>
-        <!-- /.row -->
-
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+          
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
@@ -96,6 +134,27 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="/js/demo/datatables-demo.js"></script>
 
   </body>
 
