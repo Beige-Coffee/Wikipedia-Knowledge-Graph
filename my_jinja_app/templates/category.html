@@ -61,7 +61,7 @@
       <!-- Call to Action Well -->
       <div class="card text-white bg-secondary my-4 text-center">
         <div class="card-body">
-          <p class="text-white m-0" style="font-size:200%;">Wikipedia Category: {{sub_category_name}}</p>
+          <p class="text-white m-0" style="font-size:200%;">Wikipedia Category: Machine Learning</p>
         </div>
       </div>
 
@@ -69,15 +69,14 @@
 
       <div class="row">
           {% block body %}
-          {% for page in pages %}
+          {% for index, row in data.iterrows() %}
           <div class="col-md-4 mb-4">
             <div class="card h-100">
-              <div class="card-body" >
-                <h4 class="card-title">{{page[0]}}</h4>
-                <small>Predicted Quality: {{page[1]}}</small>
+              <div class="card-body">
+                <h4 class="card-title">{{row['category']}}</h4>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Click To Page</a>
+                <a href="/sub_category/{{row['url_cat']}}" class="btn btn-primary">See Articles</a>
               </div>
             </div>
           </div>
