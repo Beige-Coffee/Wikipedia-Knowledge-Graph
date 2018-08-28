@@ -96,12 +96,12 @@
                   <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 59px;">Page</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 65px;">Quality Score</th>
                   </tr>
                 </thead>
-                
+
                 <tbody>
                   {% block body %}
                   {% for i, row in data.iterrows() %}
                 <tr role="row">
-                    <td class="sorting_1">{{row['page']}}</td>
+                    <td class="sorting_1"><a href="https://en.wikipedia.org/wiki/{{row['url_cat']}}">{{row['page']}}</a></td>
                     <td>{{row['Predicted_Quality']}}</td>
                   {% endfor %}
                   {% endblock %}

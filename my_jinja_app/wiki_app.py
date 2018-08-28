@@ -26,7 +26,7 @@ def load_category(category_name):
 def load_sub_category(sub_category_name):
     data = pickle.load( open( "/Users/austin/Documents/Galvanize/Capstone/Wikipedia_Knowledge_Graph/EDA/ML_pages.pkl", "rb" ) )
     data = data[data['category'] == sub_category_name]
-    pages = list(zip(data.page, data.Predicted_Quality))
+    data['url_cat'] = data['page'].apply(urllib.parse.quote)
     return render_template('sub_category.html', data=data, sub_category_name=sub_category_name)
 
 
