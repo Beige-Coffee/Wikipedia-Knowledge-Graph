@@ -15,3 +15,4 @@ src/random_forest_model.sav
 RIP/
 EDA/ML_page_predictions.pkl
 EDA/wiki_pipeline_test.ipynb
+__pycache__/
