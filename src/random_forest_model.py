@@ -1,5 +1,8 @@
+import sys
+sys.path.append('..')
 import pandas as pd
 import numpy as np
+import pickle
 from ast import literal_eval
 from textstat.textstat import textstat
 from gensim.corpora import wikicorpus
@@ -8,7 +11,7 @@ import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import feature_engineering as feature
+from feature_engineering import feature_engineering
 from sklearn.metrics import mean_squared_error
 
 
@@ -64,17 +67,38 @@ def transform_data(dataframe):
                 'num_about_links', 'num_wikitables', 'smog_index']]
     return dataframe
 
+rf_model = pickle.load(open('/random_forest_model.sav', 'rb'))
 
-class WikiArticleClassifier():
+class WikiArticleRegressor():
 
-    def __init__(self):
-        self.rf = RandomForestRegressor(n_estimators=10)
+    def __init__(self, model):
+        """ Instantiate a WikiArticleRegressor Class. 
+
+        Parameters
+        ----------
+        none:
+
+        Returns
+        -------
+        WikiArticleClassifier (class): A WikiArticleRegressor Object
+        """
+        self.model = model
 
     def fit(self, X, y):
+        """ Fit . 
+
+        Parameters
+        ----------
+        none:
+
+        Returns
+        -------
+        WikiArticleClassifier (class): A WikiArticleRegressor Object
+        """
         transformed_data = transform_data(X).values
-        self.rf.fit(transformed_data,y)
+        self.model.fit(transformed_data,y)
 
     def predict(self, X):
         transformed_data = transform_data(X).values
-        return self.rf.predict(transformed_data)
+        return self.model.predict(transformed_data)
 

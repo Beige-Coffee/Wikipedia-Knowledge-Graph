@@ -77,7 +77,7 @@ def cick_to_sub_category_page(page):
 
 
 def filter_pages(pages):
-        """ Filters out erroneous text from the list of pages scraped under a sub-category . 
+    """ Filters out erroneous text from the list of pages scraped under a sub-category . 
 
         Parameters
         ----------
