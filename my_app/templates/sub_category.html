@@ -102,7 +102,7 @@
                   {% for i, row in data.iterrows() %}
                 <tr role="row">
                     <td class="sorting_1"><a href="https://en.wikipedia.org/wiki/{{row['url_cat']}}">{{row['page']}}</a></td>
-                    <td>{{row['Predicted_Quality']}}</td>
+                    <td> <span style="background-color: {{row['color']}};">&nbsp;&nbsp;</span>&nbsp;&nbsp;{{row['Predicted_Quality']}} <span style="color: {{row['color']}}; font-weight:bold"> –––</span></td>
                   {% endfor %}
                   {% endblock %}
                   </tr></tbody>
