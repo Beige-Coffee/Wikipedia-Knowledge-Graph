@@ -61,7 +61,7 @@ def get_sub_categories(browser):
     return [category.text for category in subs]
 
 
-def cick_to_sub_category_page(page):
+def cick_to_sub_category_page(browser, page):
     """ Uses a Selenium browser to click to a Wikipedia sub-category page.
         Note: Must be hierarchically above the sub-category on the site map. 
 
