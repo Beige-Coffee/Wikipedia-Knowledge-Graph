@@ -17,3 +17,5 @@ EDA/ML_page_predictions.pkl
 EDA/wiki_pipeline_test.ipynb
 __pycache__/
 feature_engineering/Features_EDA.ipynb
+data_pipeline.ipynb
+random_forest_test_pipeline.py
