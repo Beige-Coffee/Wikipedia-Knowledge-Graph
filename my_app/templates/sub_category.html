@@ -81,9 +81,6 @@
         <!-- /.row -->
         
         <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Data Table Example</div>
           <div class="card-body">
             <div class="table-responsive">
               <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -102,7 +99,7 @@
                   {% for i, row in data.iterrows() %}
                 <tr role="row">
                     <td class="sorting_1"><a href="https://en.wikipedia.org/wiki/{{row['url_cat']}}">{{row['page']}}</a></td>
-                    <td> <span style="background-color: {{row['color']}};">&nbsp;&nbsp;</span>&nbsp;&nbsp;{{row['Predicted_Quality']}} <span style="color: {{row['color']}}; font-weight:bold"> –––</span></td>
+                    <td> <span style="background-color: {{row['color']}};">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;{{row['Predicted_Quality']}}&nbsp;&nbsp;&nbsp;<span style="background-color: {{row['color']}};">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
                   {% endfor %}
                   {% endblock %}
                   </tr></tbody>
