@@ -56,12 +56,25 @@ While plenty of data was available to train my model, I took to the internet to 
 
 The most important piece of this puzzle was an API call to Wikipedia, which iteratively returned the raw XML text for each article that my web-scraping functions had identified. This data was then aggregated and fed into my website using Flask and Jinja.
 
-## My Model
+## My Models
+
+### Model 1
 I took a couple approaches in building a model to accurately predict the quality of a wikipedia class. The first approach, and, ultimately, the most successful, was a random forest model that took about 30 hand-engineered features as input. These hand-engineered features were carefully selected by examining the raw XML data and cross-referencing that with Wikipedia's documentation to determine which tags (the markup text highlighted in green in the image above) to focus on. Additionally, I used **textstat**, a module that specializes in extracting text-related statistics from documents, to construct NLP features that shed more light on the semantics of an article - versus structural features, such as article length. Some of the features used in the model are listed below:
 - Article Length
 - Number of Web, Book, News, and Journal Citations
 - Whether Article Had an "Infobox" or Not (Boolean Value)
 - Number of "Difficult" words
   - A "difficult" word is any word that does **not** appear in the 3,000 most common words in a 4th graders vocabulary
+
+### Model 2
+In addition to a random forest that took hand-engineered features as input, I sought out to create a model that took hash-vectorized tfidf vectorizors as input. In short, hash-vectorized tfidf vectors are ways to represent a text document in terms of numbers. Doing this makes it easy for a machine learning model to digest text and derive 'meaning' from the words. In this context, I chose to use a hash-vectorized tfidf vectorizors instead of the more ubiquitous tfidf vectorizer because, by hashing the vector, it takes up less memory and is less computationaly expensive. 
+
+After tranforming the training data into hash-vectorized inputs, I experimented with using a random forest and gradient boosted model. In the end, both models had slightly higher mean squared error scores when compared to the aforementioned random forest. 
+
+### Model 2.5
+The next model I experimented with was an ensemble model of the orginal rando forrest with hand-engineered features and the new random forest with hash-vectorizers describing each article. More precisely, I fit a linear regression on the predicted values of each article - the predicted values being the **two article quality scores predicted by each of the two random forrests**. My hope in doing this was that the linear regression would be able to find the optimal weights for each coefficient and produce better results than just one model alone. In other words, I was hoping that each random forest would capture something distinctly unique about each article and that, when combined, they would produce a score better than either model alone. However, after comparing the MSE of the ensemble model with *just the original random forest with hand-engineered features*, I determined that the MSE of the ensemble was roughly 0.75 while the MSE of the Hand-Engineered random forest was 0.67. 
+
+### Model 3
+In addition to the aforementioned models, I also experimented with a reccurent neural network (RNN). This approach was inspired by reading many NLP research articles and continually be exposed to the effectiveness of RNN on text data. In the end, my RNN did not result in an improvement in predictive power (when compared to either the hash-vectorized random forest or the hand-engineered random forest). Therefore, in the end, I chose to move forward with the hand-engineered random forest - especially when considering the time-factor of training an RNN. 
 
 
