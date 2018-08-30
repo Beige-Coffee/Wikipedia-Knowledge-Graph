@@ -7,6 +7,9 @@ Please note that this is a work-in-progress.
 Thanks,
 - Austin (Aug, 2018)
 
+## The Problem In 1 Sentence
+My model and website assist Wikipedia editors in algorithmically detecting which articles (out of the 50 million possible articles) are in need of editorial attention.
+
 
 ## In A Nutshell
 With roughly 50 million articles in Wikipedia's corpus, once can imagine how daunting of a task it must be to find the optimal balance between quality and quantity. For example, if you take a look at the following two articles, you can begin to see how disparate the range of quality is across Wikipedia. 
