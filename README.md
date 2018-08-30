@@ -105,7 +105,7 @@ Discloser: The website is days away from going live, however, in the meantime, I
 
 To manage my work throughout this process, I created a Trello board. This enabled me to strategically divide my work into small objectives and track my progress in completing each task in a timely manner. Additionally, I assigned specific tasks to certain categories (e.g., Website, Model, Data, Web-Scraping, etc.) so that I can easily visualize the overarching progress of each theme throughout time. Lastly, I've chosen to make this Trello board public because I want others to have the ability to track my progress (in detail) and, more importantly, hold me accountable for my work. Going off that note, you can find my live trello board here: https://trello.com/b/6XRlBmh5/wikipedia-article-quality-classifier 
 
-<img width="1122" alt="screen shot 2018-08-30 at 8 51 17 am" src="https://user-images.githubusercontent.com/34213201/44875986-8ac1ff00-ac54-11e8-812a-560e23f7dc79.png">
+<img width="1122" alt="screen shot 2018-08-30 at 1 06 01 pm" src="https://user-images.githubusercontent.com/34213201/44876314-8fd37e00-ac55-11e8-8bee-074e4dae00e3.png">
 
 
 
