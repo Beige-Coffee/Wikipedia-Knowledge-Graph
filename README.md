@@ -18,24 +18,24 @@ With roughly 50 million articles in Wikipedia's corpus, once can imagine how dau
 - High quality article: https://en.wikipedia.org/wiki/Elizabeth_II
 - Low quality article: https://en.wikipedia.org/wiki/Ring-tailed_cardinalfish
 
-Now, at first thought, you may think that this difference in quality is not only understandable, but expected. And, if this was your thought, you'd be right. However, the more nuanced point is:
-1) These articles were hand-selected to illucidate the point that a difference of quality exists
+Now, at first thought, you may think that this difference in quality is not only understandable but expected. And, if this was your thought, you'd be right. However, the more nuanced point is:
+1) These articles were hand-selected to elucidate the point that a difference of quality exists
 2) This difference in quality exists across many articles and, therefore, is not easy to readily detect
 
-However, the advent of machine learning and predictive modeling has done a lot to level the scale between quality and quantity. In hopes of contributing towards this endeavor and, *just as importantly*, **building a product that can be intuitively understood by any wikipedia editor**, I have built a machine learning model to predict the quality score of a Wikipedia article and, subsequently, organize article predictions by category on a user-friendly website. By using these tools, Wikipedia editors can seemlesly find articles that match with their personal expertise and sort by each articles predicted article quality, thus, allowing them to efficiently focus on contributing their knowledge where it's needed most.
+However, the advent of machine learning and predictive modeling has done a lot to level the scale between quality and quantity. In hopes of contributing towards this endeavor and, *just as importantly*, **building a product that can be intuitively understood by any Wikipedia editor**, I have built a machine learning model to predict the quality score of a Wikipedia article and, subsequently, organize article predictions by category on a user-friendly website. By using these tools, Wikipedia editors can seamlessly find articles that match with their personal expertise and sort by each article's predicted article quality, thus, allowing them to efficiently focus on contributing their knowledge where it's needed most.
 
 ## The Data
 
 ### Train/Test Data
-The training data consisted of roughly 30,000 graded Wikipedia articles - data openly available here: https://analytics.wikimedia.org/datasets/archive/public-datasets/enwiki/article_quality/. In this context, "graded" means that a person assigned a quality score to the wikipedia article based on its encyclopedic value. For example, as depicted in the table below, "FA" signifies that the article is a "definitive source for encyclopedic information".
+The training data consisted of roughly 30,000 graded Wikipedia articles - data openly available here: https://analytics.wikimedia.org/datasets/archive/public-datasets/enwiki/article_quality/. In this context, "graded" means that a person assigned a quality score to the Wikipedia article based on its encyclopedic value. For example, as depicted in the table below, "FA" signifies that the article is a "definitive source for encyclopedic information".
 
 
 <img width="771" alt="screen shot 2018-08-30 at 10 13 59 am" src="https://user-images.githubusercontent.com/34213201/44867782-ad94e900-ac3d-11e8-95c1-c7dd42703773.png">
 
 
-To train my model, I decided to convert these classes into integers. By doing this, I was effectively pivoting from a classification problem to a regression problem. This was a strategic decision that was made in light of the folowing factors:
-1) While the boarder between a "**GA**" and an "**FA**" article is somewhat clearly defined *in words*, it's much harder to parse out in practice. For example, an "**FA**" article **is** a professional encyclodpeic entry while a "**GA**" article is **almost** "professional". Using just this one example, we can see how the difference between these two classes relies on the definition of "professional", which undoubtedly changes person-to-person.
-2) The classes can easily be thought of as categories which differ in a relatively consistent manner. More specifically, the different between a "**Stub**" and a "**Start**" article is probably similar to the difference between a "**GA**" and an "**FA**" article. To further illustrate this with a counter-example, imagine turning the three categories **"Dog"**, **"Monkey"**, and **"Ant"** into integers. The different between a "**Dog**" and an "**Monkey**" is not at all similar to the difference between a "**Monkey**" and an "**Ant**".
+To train my model, I decided to convert these classes into integers. By doing this, I was effectively pivoting from a classification problem to a regression problem. This was a strategic decision that was made in light of the following factors:
+1) While the border between a "**GA**" and a "**FA**" article is somewhat clearly defined *in words*, it's much harder to parse out in practice. For example, a "**FA**" article **is** a professional encyclopedic entry while a "**GA**" article is **almost** "professional". Using just this one example, we can see how the difference between these two classes relies on the definition of "professional", which undoubtedly changes person-to-person.
+2) The classes can easily be thought of as categories which differ in a relatively consistent manner. More specifically, the difference between a "**Stub**" and a "**Start**" article is probably similar to the difference between a "**GA**" and a "**FA**" article. To further illustrate this with a counter-example, imagine turning the three categories **"Dog"**, **"Monkey"**, and **"Ant"** into integers. The difference between a "**Dog**" and a "**Monkey**" is not at all similar to the difference between a "**Monkey**" and an "**Ant**".
 
 So, in summary, I mapped the categorical target outputs to numerical outputs and trained my model on those. This also had the nice side effect of being able to predict, for example, a 4.5 - signifying that this article is probably better than a 4 but not quite as good as a 5. 
 
