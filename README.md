@@ -13,7 +13,7 @@ Thanks,
 - **My Solution:** I built a model which algorithmically predicts an article's quality score and displays the results (aggregated by category and sub-category) on a user-friendly website. 
 
 
-## Brief Overview
+## Business Understanding / Let's Put This In Context
 With roughly 50 million articles in Wikipedia's corpus, once can imagine how daunting of a task it must be to find the optimal balance between quality and quantity. For example, if you take a look at the following two articles, you can begin to see how disparate the range of quality is across Wikipedia. 
 - High quality article: https://en.wikipedia.org/wiki/Elizabeth_II
 - Low quality article: https://en.wikipedia.org/wiki/Ring-tailed_cardinalfish
@@ -76,5 +76,30 @@ The next model I experimented with was an ensemble model of the orginal rando fo
 
 ### Model 3
 In addition to the aforementioned models, I also experimented with a reccurent neural network (RNN). This approach was inspired by reading many NLP research articles and continually be exposed to the effectiveness of RNN on text data. In the end, my RNN did not result in an improvement in predictive power (when compared to either the hash-vectorized random forest or the hand-engineered random forest). Therefore, in the end, I chose to move forward with the hand-engineered random forest - especially when considering the time-factor of training an RNN. 
+
+
+## Evaluation
+As alluded to in a couple of the previous sections, model evaluation took the form of finding the model which minimized the mean squared error (MSE). The reason that I chose MSE was because each model was predicting a continuous score - with whole integers mapping to an article quality class ("**FA**", for example). Therefore, choosing the model that minimized the MSE was akin to choosing the model that, on average, most accurately predicted a quality score that was similar to the actual score - while also severely punishing outlier predictions (Predicting "**FA**" when the actual class is "**Start**", for example). After all was tested and evaluated, Model 1 - the random forrest with hand-engineered features) came out on top as the best model for the job.
+
+## The Final Product
+In an effort to deliver article predictions in an intuitive way that any user can understand, I built a website that aggregates article predictions first by sub-category and then by overaching category. My reason for contructing the hierarchy in this manner was to implenent a logical structure that micmiced that of human thought. For example, a user usually has one (or multiple) higher level concepts that interest them. For instance, I am particularly interested in Entrepreneurship, Machine Learning, and Philosophy. Therefore, I would start with these topics and then begin to recursively digress until I reach a sub-category or article that closely aligns with my interest. 
+
+Discloser: The website is days away from going live, however, in the meantime, I have uploaded pictures below that represent how a user would interact with the site.
+
+### Page 1: Homepage: 
+#### From here, the user would click a category that interests them. For example, let's pretend we click "Machine Learning"
+<img width="1436" alt="screen shot 2018-08-30 at 12 47 07 pm" src="https://user-images.githubusercontent.com/34213201/44875382-dffd1100-ac52-11e8-9169-3ef9c77a69a3.png">
+
+
+### Page 2: Machine Learning Sub-Categories: 
+#### Now, the user will be presented the sub-categories under Machine Learning, with option to sort alphabetically, by predicted sub-category quality, or search for a specific sub-category.
+<img width="1437" alt="screen shot 2018-08-30 at 12 50 14 pm" src="https://user-images.githubusercontent.com/34213201/44875526-4d10a680-ac53-11e8-87c0-323844fa0879.png">
+
+
+### Page 3: Articles In A Certain Sub-Category: 
+#### After clicking a sub-category, the user will be presented with all Wikipedia articles in that sub-category and have the option to click directly to an article's Wikipedia page.
+<img width="1434" alt="screen shot 2018-08-30 at 12 52 12 pm" src="https://user-images.githubusercontent.com/34213201/44875625-9d880400-ac53-11e8-8ee5-d8336b5325c9.png">
+
+
 
 
