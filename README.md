@@ -26,7 +26,7 @@ However, the advent of machine learning and predictive modeling has done a lot t
 
 ## The Data
 
-### Training Data
+### Train/Test Data
 The training data consisted of roughly 30,000 graded Wikipedia articles - data openly available here: https://analytics.wikimedia.org/datasets/archive/public-datasets/enwiki/article_quality/. In this context, "graded" means that a person assigned a quality score to the wikipedia article based on its encyclopedic value. For example, as depicted in the table below, "FA" signifies that the article is a "definitive source for encyclopedic information".
 
 
@@ -42,3 +42,17 @@ So, in summary, I mapped the categorical target outputs to numerical outputs and
 
 ![quality2](https://user-images.githubusercontent.com/34213201/44868821-cfdc3600-ac40-11e8-8b33-a1606df41cf6.png)
 Picture of transformed target values used when training the model
+
+Lastly, the data that was transformed into features that acted as input to the model was simply the raw Wikipedia text of an article. In this context, "raw" means the XML text that includes tags for items such as citations, links, images, etc. A sample of the input data, before transformations were applied, is pictured below.
+
+<img width="408" alt="screen shot 2018-08-30 at 10 54 45 am" src="https://user-images.githubusercontent.com/34213201/44869750-3b270780-ac43-11e8-88a4-ddd374e5dd91.png">
+
+
+### New Data
+While plenty of data was available to train my model, I took to the internet to gather new data to make predictions on. To accomplish this, I built a multitude of web-scraping functions that, for example, would take a category as input and, subsequently, return a dataframe including:
+- The original category's sub-categories
+- The articles in each sub-category
+- The predicted quality score of each article
+
+The most important piece of this puzzle was an API call to Wikipedia, which iteratively returned the raw XML text for each article that my web-scraping functions had identified. This data was then aggregated and fed into my website using Flask and Jinja.
+
