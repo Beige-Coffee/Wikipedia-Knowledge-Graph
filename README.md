@@ -9,14 +9,14 @@ Thanks,
 
 
 ## In A Nutshell
-With roughly 50 million articles in Wikipedia's corupus, once can imagine how daunting of a task it must be to find the optimal balance between quality and quantity. For example, if you take a look at the following two articles, you can begin to see how disparate the range of quality is across Wikipedia articles. 
+With roughly 50 million articles in Wikipedia's corpus, once can imagine how daunting of a task it must be to find the optimal balance between quality and quantity. For example, if you take a look at the following two articles, you can begin to see how disparate the range of quality is across Wikipedia. 
 - High quality article: https://en.wikipedia.org/wiki/Elizabeth_II
 - Low quality article: https://en.wikipedia.org/wiki/Ring-tailed_cardinalfish
 
 Now, at first thought, you may think that this difference in quality is not only understandable, but expected. And, if this was your thought, you'd be right. However, the more nuanced point is:
-- 1) These articles were hand-selected to illucidate the point that a difference of quality exists
-- 2) This difference in quality exists across many articles and, therefore, is not easy to readily detect
+1) These articles were hand-selected to illucidate the point that a difference of quality exists
+2) This difference in quality exists across many articles and, therefore, is not easy to readily detect
 
-However, the advent of machine learning and predictive modeling has done a lot to level the scale between quality and quantity. In hopes of contributing towards this endeavor and, *just as importantly*, **building a project that can be intuitively understood by any wikipedia editor**, I have built a machine learning model to predict the quality score of a Wikipedia article and, subsequently, organize article predictions by category on a user-friendly website.
+However, the advent of machine learning and predictive modeling has done a lot to level the scale between quality and quantity. In hopes of contributing towards this endeavor and, *just as importantly*, **building a project that can be intuitively understood by any wikipedia editor**, I have built a machine learning model to predict the quality score of a Wikipedia article and, subsequently, organize article predictions by category on a user-friendly website. By using these tools, Wikipedia editors can seemlesly find articles that match with their personal expertise and sort by each articles predicted article quality, thus, allowing them to efficiently focus on contributing their knowledge where it's needed most.
 
 
