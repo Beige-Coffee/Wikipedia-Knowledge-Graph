@@ -143,7 +143,7 @@ def get_wiki_category_quality(category):
                 yield post
         except NoSuchElementException:
             w = browser.find_elements_by_class_name('mw-content-ltr')
-            pages = filter_pages(w[0].text.split('\n'))[2:]
+            pages = filter_pages(w[0].text.split('\n'))[1:]
             for page in pages:
                 post = {'category': title,
                     'page': page,

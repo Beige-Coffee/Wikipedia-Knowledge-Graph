@@ -154,6 +154,5 @@ class WikiArticleRegressor():
         -------
         WikiArticleClassifier (class): Predicted values
         """
-        transformed_data = X_from_transformed_dataframe(transform_data(X)).values
+        transformed_data = get_features(transform_data(X)).values
         return self.model.predict(transformed_data)
-
