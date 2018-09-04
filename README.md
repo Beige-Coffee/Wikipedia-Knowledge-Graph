@@ -79,7 +79,7 @@ In addition to the aforementioned models, I also experimented with a recurrent n
 
 
 ## Evaluation
-As alluded to in the previous sections, model evaluation took the form of finding the model which minimized the mean squared error (MSE). The reason that I chose MSE was that each model was predicting a continuous score - with whole integers mapping to an article quality class ("**FA**", for example). Therefore, choosing the model that minimized the MSE was akin to choosing the model that, on average, most accurately predicted a quality score that was similar to the actual score - while also severely punishing outlier predictions (Predicting "**FA**" when the actual class is "**Start**", for example). After everything was tested and evaluated, Model 1 - the random forest with hand-engineered features) came out on top as the best model for the job.
+As alluded to in the previous sections, model evaluation took the form of finding the model which minimized the mean squared error (MSE). The reason that I chose MSE was that each model was predicting a continuous score - with whole integers mapping to an article quality class ("**FA**", for example). Therefore, choosing the model that minimized the MSE was akin to choosing the model that, on average, most accurately predicted a quality score that was similar to the actual score - while also punishing outlier predictions (Predicting "**FA**" when the actual class is "**Start**", for example). After everything was tested and evaluated, Model 1 (the random forest with hand-engineered features) came out on top as the best model for the job.
 
 
 
