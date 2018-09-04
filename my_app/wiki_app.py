@@ -17,14 +17,14 @@ def welcome_page():
 
 @app.route('/category/<category_name>', methods=['GET'])
 def load_category(category_name):
-    data = pickle.load( open( "/Users/austin/Documents/Galvanize/Capstone/Wikipedia_Knowledge_Graph/web_data/ML_data.pkl", "rb" ) )
+    data = pickle.load( open( "../web_data/ML_data.pkl", "rb" ) )
     data['url_cat'] = data['category'].apply(urllib.parse.quote)
     pages = list(zip(data['category'], data['Predicted_Quality']))
     return render_template('category.html', data=data, pages=pages, category_name=category_name)
 
 @app.route('/sub_category/<sub_category_name>', methods=['GET'])
 def load_sub_category(sub_category_name):
-    data = pickle.load( open( "/Users/austin/Documents/Galvanize/Capstone/Wikipedia_Knowledge_Graph/web_data/ML_pages.pkl", "rb" ) )
+    data = pickle.load( open( "../web_data/ML_pages.pkl", "rb" ) )
     data = data[data['category'] == sub_category_name]
     data['url_cat'] = data['page'].apply(urllib.parse.quote)
     return render_template('sub_category.html', data=data, sub_category_name=sub_category_name)
