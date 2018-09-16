@@ -98,7 +98,7 @@ A couple findings to note:
 ## The Final Product
 In an effort to deliver article predictions in an intuitive way that any user can understand, I built a website that aggregates article predictions first by sub-category and then by overarching category. My reason for constructing the hierarchy in this manner was to implement a logical structure that mimicked that of human thought. For example, a user usually has one (or multiple) higher level concepts that interest them. For instance, I am particularly interested in Entrepreneurship, Machine Learning, and Philosophy. Therefore, I would start with these topics and then begin to recursively digress until I reach a sub-category or article that closely aligns with my interest. 
 
-Discloser: The website is days away from going live, however, in the meantime, I have uploaded pictures below that represent how a user would interact with the site.
+You can find the website here: http://www.wikigraph.online/ (*Please note that the website is still being developed. "Machine Learning" is the only category that is fully built-out.) or view the pictures below.
 
 ### Page 1: Homepage: 
 #### From here, the user would click a category that interests them. For example, let's pretend we click "Machine Learning"
