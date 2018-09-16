@@ -5,7 +5,7 @@ Using 30,000 hand-graded Wikipedia articles and NLP to predict the quality of Wi
 Please note that this is a work-in-progress. 
 
 Thanks,
-- Austin (Aug, 2018)
+- Austin (Sep, 2018)
 
 ## The Problem In 1 Sentence. My Solution In 1 Sentence.
 - **Problem:** Wikipedia contributors are tasked with detecting which articles (out of the 50 million possible articles) are in need of editorial attention and, subsequently, contributing their knowledge to enhance the encyclopedic value of Wikipedia.
